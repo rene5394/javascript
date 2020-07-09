@@ -1,0 +1,6 @@
+#notes-textarea{
+    height: 40vh !important;
+    max-height: 400px;
+    width: 70vh;
+    max-width: 600px;
+}
