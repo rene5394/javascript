@@ -2,7 +2,7 @@ window.onload = function(){
     categories = {
         'Home': ['table', 'oven','microwave','bed'],
         'Clothes' : ['shirt','jersey','jeans','skirt','blouse'],
-        'School': ['board, desk', 'chair', 'rule'],
+        'School': ['board', 'desk', 'chair', 'rule'],
         'Sports': ['soccer', 'basketball', 'tennis', 'baseball'],
         'Computer Parts': ['screen', 'mouse', 'keyboard', 'cpu']
     };
