@@ -6,12 +6,12 @@ const listaTweets = document.getElementById('lista-tweets');
 eventListeners();
 
 function eventListeners(){
-    // Cuando se envia el formulario
+    // Agregar Tweet
     document.getElementById('formulario').addEventListener('submit', agregarTweet);
-    // Borrar Tweets
+    // Borrar Tweet
     listaTweets.addEventListener('click', borrarTweet);
     // Cargar Tweets existentes
-    document.addEventListener('DOMContentLoaded', localStorageListo);
+    document.addEventListener('DOMContentLoaded', cargarTweetswLocalStorage);
 }
 
 // Funciones
@@ -40,19 +40,23 @@ function borrarTweet(e){
     e.preventDefault();
     if(e.target.className === 'borrar-tweet'){
         e.target.parentElement.remove();
+        borrarTweetLocalStorage(e.target.parentElement.innerText);
     }
 }
 
-// Agregar un tweet
+// Agregar un tweet a Local Storage
 function agregarTweetLocalStorage(tweet){
     let tweets;
     tweets = obtenerTweetsLocalStorage();
     //Añadir  el nuevi tweet
     tweets.push(tweet);
     //Convertir de String a arreglo para Local Storage
-    localStorage.setItem('tweets'. JSON.stringify(tweets));
+    console.log(tweets);
+    console.log(JSON.stringify(tweets));
+    localStorage.setItem('tweets', JSON.stringify(tweets));
 }
 
+// Obtener tweets de Local Storage
 function obtenerTweetsLocalStorage(){
     let tweets;
     // Revisamos si hay tweets en Local Storage
@@ -64,11 +68,11 @@ function obtenerTweetsLocalStorage(){
     return tweets;
 }
 
-function localStorageListo(){
+// Cargar Tweets de Local Storage3
+function cargarTweetswLocalStorage(){
     let tweets;
-
     tweets = obtenerTweetsLocalStorage();
-    tweets.array.forEach(function(element){
+    tweets.forEach(function(tweet){
         // Crear boton de eliminar
         const botonBorrar = document.createElement('a');
         botonBorrar.classList = 'borrar-tweet';
@@ -79,4 +83,19 @@ function localStorageListo(){
         li.appendChild(botonBorrar);
         listaTweets.appendChild(li);
     });
+}
+
+// Borrar tweet de Local Storage
+function borrarTweetLocalStorage(tweet){
+    let tweets, tweetBorrar;
+    tweetBorrar = tweet.substring(0, tweet.length -1);
+
+    tweets = obtenerTweetsLocalStorage();
+    tweets.forEach(function(tweet, index){
+        if(tweet === tweetBorrar){
+            tweets.splice(index, 1);
+        }
+    });
+    
+    localStorage.setItem('tweets', JSON.stringify(tweets));
 }
