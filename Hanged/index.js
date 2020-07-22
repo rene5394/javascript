@@ -1,5 +1,9 @@
 window.onload = function(){
     categories = {
+        'Team Juan Members': ['juan', 'walter', 'adri', 'alexandra', 
+        'edmundo', 'elmer', 'fabricio', 'gabriela', 'gerardo', 'guillermo', 
+        'jaime', 'jeannette', 'jesus','juliette', 'kevin', 'laura', 
+        'laurita', 'mafer', 'oscar', 'ricardo', 'roberto', 'ron', 'rene'],
         'Animals': ['dog', 'cat', 'snake', 'tiger', 'lion', 'wolf'],
         'Computer Parts': ['screen', 'mouse', 'keyboard', 'cpu'],
         'Sports': ['soccer', 'basketball', 'tennis', 'baseball'],              
