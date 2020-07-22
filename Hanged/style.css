@@ -1,5 +1,61 @@
+#hanged-image {
+    text-align: right;
+    white-space: break-spaces;
+}
+
+@media screen and (max-width:767px){
+    #hanged-image {
+        width: fit-content;
+        margin: auto;
+    }
+}
+
 #categories{
     max-width: 300px;
     margin: auto;
     display: block;
 }
+
+#word-container{
+    display: flex;
+    list-style: none;
+    width: fit-content;
+    margin: auto;
+}
+
+#alphabet-container{
+    display: inline-block;
+    list-style: none;
+    width: fit-content;
+    margin: auto;
+}
+
+#word-container li{
+    padding: 0px 10px;
+    font-size: 70px;
+    font-weight: 200;
+}
+
+#alphabet-container li{
+    float: left;
+    font-size: 40px;
+    padding: 0px 10px;
+    font-weight: 300;
+    cursor: pointer;
+    border: solid 1px #000;
+    margin: 5px;
+    min-width: 60px;
+    text-align: center;
+}
+
+#alphabet-container li:hover{
+    border: solid 1px red;
+    color: red;
+}
+
+#alphabet-container li.marked{
+    pointer-events: none;
+    border: solid 1px red;
+    color: red;
+}
+
